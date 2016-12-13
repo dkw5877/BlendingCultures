@@ -10,33 +10,39 @@ import UIKit
 
 struct Hand {
 
-    private let deck = Deck()
+    private var deck = Deck()
     private var cards = [Card]()
     var numberOfCards:Int {
         return cards.count
     }
 
-
-    mutating func addNewCartAtIndex(index:Int) {
-        insertCard(card: deck.nextCard(), atIndex: index)
+    init(deck:Deck, cards:[Card]) {
+        self.deck = deck
+        self.cards = cards
     }
 
-    mutating private func insertCard(card:Card, atIndex index:Int) {
-        cards.insert(card, at: index)
+    func addNewCartAtIndex(index:Int) -> Hand {
+       return insertCard(card: deck.nextCard(), atIndex: index)
+    }
+
+    private func insertCard(card:Card, atIndex index:Int) -> Hand {
+        var mutableCards = cards
+        mutableCards.insert(card, at: index)
+        return Hand(deck: deck, cards: mutableCards)
     }
 
     mutating func cardAtPosition(index:Int) -> Card {
         return cards[index]
     }
 
-    mutating func deleteCardAtIndex(index:Int) {
-        cards.remove(at: index)
+    func deleteCardAtIndex(index:Int) -> Hand {
+        var mutableCards = cards
+        mutableCards.remove(at: index)
+        return Hand(deck: deck, cards: mutableCards)
     }
 
-    mutating func moveCard(fromIndex:Int, toIndex:Int) {
-        let cardToMove =  cards[fromIndex]
-        deleteCardAtIndex(index: fromIndex)
-        insertCard(card: cardToMove, atIndex: toIndex)
+    mutating func moveCard(fromIndex:Int, toIndex:Int) -> Hand {
+        return deleteCardAtIndex(index: fromIndex).insertCard(card: cards[fromIndex], atIndex: toIndex)
     }
     
 }

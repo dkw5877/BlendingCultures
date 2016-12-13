@@ -10,17 +10,15 @@ import UIKit
 
 class HandViewController: UITableViewController {
 
-    private var hand = Hand()
+    private var hand = Hand(deck: Deck(), cards: [Card]())
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.navigationItem.leftBarButtonItem = self.editButtonItem()
-
     }
 
     @IBAction private func addNewCard(sender:UIBarButtonItem) {
     if hand.numberOfCards < 5 {
-        hand.addNewCartAtIndex(index: 0)
+        hand  = hand.addNewCartAtIndex(index: 0)
         insertTopRow()
     }
     }
@@ -46,7 +44,7 @@ class HandViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            hand.deleteCardAtIndex(index:indexPath.row)
+            hand = hand.deleteCardAtIndex(index:indexPath.row)
             deleteRowAtIndexPath(indexPath: indexPath)
         }
     }
@@ -56,7 +54,7 @@ class HandViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        hand.moveCard(fromIndex: sourceIndexPath.row, toIndex: destinationIndexPath.row)
+        hand = hand.moveCard(fromIndex: sourceIndexPath.row, toIndex: destinationIndexPath.row)
     }
 }
 
