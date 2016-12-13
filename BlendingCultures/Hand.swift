@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Hand {
+struct Hand {
 
     private let deck = Deck()
     private var cards = [Card]()
@@ -17,23 +17,23 @@ class Hand {
     }
 
 
-    func addNewCartAtIndex(index:Int) {
+    mutating func addNewCartAtIndex(index:Int) {
         insertCard(card: deck.nextCard(), atIndex: index)
     }
 
-    private func insertCard(card:Card, atIndex index:Int) {
+    mutating private func insertCard(card:Card, atIndex index:Int) {
         cards.insert(card, at: index)
     }
 
-    func cardAtPosition(index:Int) -> Card {
+    mutating func cardAtPosition(index:Int) -> Card {
         return cards[index]
     }
 
-    func deleteCardAtIndex(index:Int) {
+    mutating func deleteCardAtIndex(index:Int) {
         cards.remove(at: index)
     }
 
-    func moveCard(fromIndex:Int, toIndex:Int) {
+    mutating func moveCard(fromIndex:Int, toIndex:Int) {
         let cardToMove =  cards[fromIndex]
         deleteCardAtIndex(index: fromIndex)
         insertCard(card: cardToMove, atIndex: toIndex)
