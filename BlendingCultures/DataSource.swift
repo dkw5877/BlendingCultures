@@ -10,23 +10,21 @@ import UIKit
 
 class DataSource: NSObject, UITableViewDataSource, SourceType {
 
-    var dataObject:DataType = Hand(deck: Deck(), cards: [Card]())
-    var conditionForAdding:Bool { return dataObject.numberOfItems < 5 }
+    var dataObject:DataType = Hand()
+    var conditionForAdding:Bool { return false }
+
+    init<A: DataType>(dataObject:A) {
+        self.dataObject = dataObject
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataObject.numberOfItems
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath) as? CardCell,
-
-        let hand = dataObject as? Hand else { fatalError("Could not create CardCell") }
-
-        cell.fillWith(card: hand[indexPath.row])
-        return cell
-
+        fatalError("This method must be overridden")
     }
+
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
     }

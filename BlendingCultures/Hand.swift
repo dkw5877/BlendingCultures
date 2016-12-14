@@ -16,7 +16,11 @@ struct Hand: DataType {
         return cards.count
     }
 
-    init(deck:Deck, cards:[Card]) {
+    init() {
+
+    }
+
+    private init(deck:Deck, cards:[Card]) {
         self.deck = deck
         self.cards = cards
     }

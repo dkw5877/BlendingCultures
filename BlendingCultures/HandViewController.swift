@@ -10,7 +10,7 @@ import UIKit
 
 class HandViewController: UITableViewController {
 
-    private var dataSource = DataSource()
+    private var dataSource = HandDataSource()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = dataSource
