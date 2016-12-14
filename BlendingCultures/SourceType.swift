@@ -11,6 +11,8 @@ import UIKit
 protocol SourceType: UITableViewDataSource {
 
     var dataObject:DataType { get set }
+    var conditionForAdding:Bool { get }
+    
     /* define the protocol methods */
     func insertTopRowIn(tableView:UITableView)
     func deleteRowAtIndexPath(indexPath:IndexPath, from tableView:UITableView)
@@ -27,6 +29,13 @@ extension SourceType {
 
     func deleteRowAtIndexPath(indexPath:IndexPath, from tableView:UITableView) {
         tableView.deleteRows(at: [indexPath], with: .fade)
+    }
+
+    func addItemTo(tableView:UITableView) {
+        if conditionForAdding {
+            dataObject  = dataObject.addNewItemAtIndex(index: 0)
+            insertTopRowIn(tableView: tableView)
+        }
     }
 
 }
