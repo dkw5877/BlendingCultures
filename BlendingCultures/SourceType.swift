@@ -10,6 +10,7 @@ import UIKit
 
 protocol SourceType: UITableViewDataSource {
 
+    var dataObject:DataType { get set }
     /* define the protocol methods */
     func insertTopRowIn(tableView:UITableView)
     func deleteRowAtIndexPath(indexPath:IndexPath, from tableView:UITableView)
