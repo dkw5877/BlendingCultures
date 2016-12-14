@@ -21,6 +21,10 @@ struct Hand {
         self.cards = cards
     }
 
+    subscript(index:Int) -> Card {
+        return cards[index]
+    }
+
     func addNewCartAtIndex(index:Int) -> Hand {
        return insertCard(card: deck.nextCard(), atIndex: index)
     }
@@ -31,7 +35,7 @@ struct Hand {
         return Hand(deck: deck, cards: mutableCards)
     }
 
-    mutating func cardAtPosition(index:Int) -> Card {
+    func cardAtPosition(index:Int) -> Card {
         return cards[index]
     }
 
@@ -41,7 +45,7 @@ struct Hand {
         return Hand(deck: deck, cards: mutableCards)
     }
 
-    mutating func moveCard(fromIndex:Int, toIndex:Int) -> Hand {
+    func moveCard(fromIndex:Int, toIndex:Int) -> Hand {
         return deleteCardAtIndex(index: fromIndex).insertCard(card: cards[fromIndex], atIndex: toIndex)
     }
     

@@ -17,6 +17,7 @@
 		CE9281EA1E00A66D0068EAD5 /* BlendingCulturesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9281E91E00A66D0068EAD5 /* BlendingCulturesUITests.swift */; };
 		CE9281F81E00A7370068EAD5 /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9281F71E00A7370068EAD5 /* Hand.swift */; };
 		CEB076601E00B60E00E489A6 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB0765F1E00B60E00E489A6 /* Deck.swift */; };
+		CEB076631E00C11800E489A6 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB076621E00C11800E489A6 /* CardCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		CE9281EB1E00A66D0068EAD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE9281F71E00A7370068EAD5 /* Hand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		CEB0765F1E00B60E00E489A6 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		CEB076621E00C11800E489A6 /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			children = (
 				CE9281C91E00A66D0068EAD5 /* AppDelegate.swift */,
 				CE9281CB1E00A66D0068EAD5 /* HandViewController.swift */,
+				CEB076621E00C11800E489A6 /* CardCell.swift */,
 				CEB076611E00B61E00E489A6 /* Models */,
 				CE9281CD1E00A66D0068EAD5 /* Main.storyboard */,
 				CE9281D01E00A66D0068EAD5 /* Assets.xcassets */,
@@ -282,6 +285,7 @@
 				CEB076601E00B60E00E489A6 /* Deck.swift in Sources */,
 				CE9281F81E00A7370068EAD5 /* Hand.swift in Sources */,
 				CE25E0CA1E00B08A004B2850 /* Card.swift in Sources */,
+				CEB076631E00C11800E489A6 /* CardCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
