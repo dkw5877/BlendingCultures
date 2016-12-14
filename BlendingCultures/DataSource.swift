@@ -8,14 +8,14 @@
 
 import UIKit
 
-class DataSource: NSObject, UITableViewDataSource {
+class DataSource: NSObject, UITableViewDataSource, SourceType {
 
     private var hand = Hand(deck: Deck(), cards: [Card]())
 
     func addItemTo(tableView:UITableView) {
         if hand.numberOfCards < 5 {
             hand  = hand.addNewCartAtIndex(index: 0)
-            insertTopRow(tableView: tableView)
+            insertTopRowIn(tableView: tableView)
         }
     }
 
@@ -34,15 +34,8 @@ class DataSource: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
     }
 
-    func deleteRowAtIndexPath(indexPath:IndexPath, from tableView:UITableView) {
-        tableView.deleteRows(at: [indexPath], with: .fade)
-    }
-
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         hand = hand.moveCard(fromIndex: sourceIndexPath.row, toIndex: destinationIndexPath.row)
     }
 
-    private func insertTopRow(tableView:UITableView) {
-        tableView.insertRows(at: [IndexPath(row:0, section:0)], with: .fade)
-    }
 }

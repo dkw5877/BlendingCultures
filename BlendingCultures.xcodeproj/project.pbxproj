@@ -19,6 +19,7 @@
 		CEB076601E00B60E00E489A6 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB0765F1E00B60E00E489A6 /* Deck.swift */; };
 		CEB076631E00C11800E489A6 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB076621E00C11800E489A6 /* CardCell.swift */; };
 		CEB076651E00C54600E489A6 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB076641E00C54600E489A6 /* DataSource.swift */; };
+		CEB076671E00C91A00E489A6 /* SourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB076661E00C91A00E489A6 /* SourceType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		CEB0765F1E00B60E00E489A6 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		CEB076621E00C11800E489A6 /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		CEB076641E00C54600E489A6 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		CEB076661E00C91A00E489A6 /* SourceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				CE9281CB1E00A66D0068EAD5 /* HandViewController.swift */,
 				CEB076641E00C54600E489A6 /* DataSource.swift */,
 				CEB076621E00C11800E489A6 /* CardCell.swift */,
+				CEB076681E00C92500E489A6 /* protocols */,
 				CEB076611E00B61E00E489A6 /* Models */,
 				CE9281CD1E00A66D0068EAD5 /* Main.storyboard */,
 				CE9281D01E00A66D0068EAD5 /* Assets.xcassets */,
@@ -146,6 +149,14 @@
 				CE25E0C91E00B08A004B2850 /* Card.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		CEB076681E00C92500E489A6 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CEB076661E00C91A00E489A6 /* SourceType.swift */,
+			);
+			name = protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +300,7 @@
 				CEB076601E00B60E00E489A6 /* Deck.swift in Sources */,
 				CE9281F81E00A7370068EAD5 /* Hand.swift in Sources */,
 				CE25E0CA1E00B08A004B2850 /* Card.swift in Sources */,
+				CEB076671E00C91A00E489A6 /* SourceType.swift in Sources */,
 				CEB076631E00C11800E489A6 /* CardCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
